@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo Oliveira Personal - Página Inicial</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Fontes Personalizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Copperplate&family=Josefin+Sans&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos base */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Navbar styles */
+        .navbar {
+            transition: all 0.3s ease;
+            padding: 20px 0;
+            background-color: transparent;
+        }
+        
+        .navbar-brand img {
+            height: 200px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        #logo-white {
+            display: block;
+            height: 200px;
+        }
+
+        #logo-black {
+            display: none;
+            height: 200px;
+        }
+        
+        .navbar.scrolled {
+            background-color: white;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar.scrolled #logo-white {
+            display: none;
+        }
+
+        .navbar.scrolled #logo-black {
+            display: block;
+        }
+        
+        /* Nav links hover effect */
+        .nav-link {
+            color: white !important;
+            font-size: 18px;
+            position: relative;
+            text-decoration: none;
+            margin: 0 10px;
+            font-family: 'Copperplate', serif;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all .3s ease-in-out 0s;
+        }
+        
+        .nav-link:hover::before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+        
+        .navbar.scrolled .nav-link {
+            color: #333 !important;
+        }
+        
+        .navbar.scrolled .nav-link::before {
+            background-color: #333;
+        }
+        
+        /* Video background */
+        .video-background {
+            flex-grow: 1;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -1;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        /* Typography */
+        h1, h2 {
+            font-family: 'Copperplate', serif;
+        }
+        
+        p {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        /* Sections */
+        #sobre, #resultados, #contato {
+            padding: 80px 0;
+        }
+        
+        #sobre h2, #resultados h2, #contato h2,
+        #sobre p, #resultados p, #contato p {
+            color: #333;
+        }
+
+        /* About section */
+        #sobre img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        /* Footer styles */
+        .footer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 150px;
+            padding: 20px 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #808080;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 24px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-links a:hover i.bi-linkedin {
+            color: #0077b5;
+        }
+
+        .social-links a:hover i.bi-instagram {
+            color: #e4405f;
+        }
+
+        .social-links a:hover i.bi-twitter-x {
+            color: #000;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #808080;
+            font-size: 14px;
+            width: 100%;
+            margin-top: 10px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        @media (min-width: 768px) {
+            #sobre .row {
+                display: flex;
+                align-items: center;
+            }
+            
+            #sobre img {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="images/logowhite.png" alt="Logo" id="logo-white">
+            <img src="images/logoblack.png" alt="Logo" id="logo-black">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link hover-effect" href="#inicio">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link hover-effect" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link hover-effect" href="calculator.html">Calculadora IMC</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link hover-effect" href="results.html">Resultados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link hover-effect" href="#contato">Contato</a>
+            </li>
+        </ul>
+        
+        </div>
+    </div>
+</nav>
+
+<!-- Seção de Fundo com Vídeo -->
+<header id="inicio" class="video-background">
+    <video autoplay loop muted class="video-bg">
+        <source src="images/intro.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+    </video>
+    <div class="overlay">
+        <div class="container text-center">
+            <h1>Transforme seu Corpo</h1>
+            <p>Imagine-se diante de um espelho, observando não apenas seu reflexo, mas o potencial inexplorado que reside em você. 
+                Aqui, você não encontra apenas um personal trainer, mas um guia para uma transformação completa. 
+                Através da combinação única de treino físico, Programação Neurolinguística (PNL) e neurociência, desbloqueie seu potencial e conquiste um corpo saudável e uma mente imparável. 
+                Reprograme seus padrões, construa hábitos duradouros e descubra o poder da sua mente na busca por uma vida extraordinária. Pronto para iniciar a sua revolução pessoal?</p>
+                <a href="#contato" class="btn btn-primary">Comece Agora!</a>
+        </div>
+    </div>
+</header>
+
+<section id="sobre">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+        <h2>Sobre Mim</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tempore dolorum molestias, culpa voluptatum iusto aliquid sequi tenetur molestiae voluptatem pariatur error, itaque ullam, distinctio nihil repudiandae amet! 
+            Iusto voluptatem ipsum excepturi obcaecati delectus deserunt nihil architecto ullam rem provident? 
+            Quo temporibus, cum ullam, inventore obcaecati reiciendis blanditiis molestiae laudantium doloremque laboriosam commodi voluptates ratione totam, 
+            non perferendis amet rerum. Officiis distinctio suscipit consequatur officia fuga in, reprehenderit deserunt praesentium quis eum mollitia velit
+            necessitatibus impedit quam aspernatur ex quisquam aut sint autem illo tempore reiciendis voluptatibus.
+            A libero nam corrupti modi at eius quae ipsa velit in quisquam earum provident totam, est magni maiores, fugit error id ab alias, 
+            quidem aut deleniti non ipsum? Veniam cupiditate labore cumque recusandae, eveniet quos dolorum natus, id accusamus itaque pariatur illum 
+            explicabo impedit suscipit sapiente dicta tempora consequatur.</p>
+        </div>
+        <div class="col-md-4">
+        <img src="images/imagem1.jpg" alt="Minha Foto" class="img-fluid rounded">
+        </div>
+    </div>
+    </div>
+</section>
+
+<section id="contato" class="py-3">
+    <div class="container">
+        <h2 class="mb-3">Entre em Contato</h2>
+        <form id="contact-form" style="max-width: 500px;">
+            <div class="mb-1">
+                <input type="text" id="nome" name="nome" class="form-control form-control-sm" placeholder="Nome Completo" required>
+            </div>
+            <div class="mb-1">
+                <input type="email" id="email" name="email" class="form-control form-control-sm" placeholder="E-mail" required>
+            </div>
+            <div class="mb-1">
+                <input type="text" id="assunto" name="assunto" class="form-control form-control-sm" placeholder="Assunto" required>
+            </div>
+            <div class="mb-2">
+                <textarea id="mensagem" name="mensagem" class="form-control form-control-sm" placeholder="Sua Mensagem" rows="2" required></textarea>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary btn-sm">
+                    Enviar!
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!--Footer-->
+<footer>
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/eduardoo.personal" target="_blank" title="Instagram">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" title="Twitter X">
+                <i class="bi bi-twitter-x"></i>
+            </a>
+        </div>
+        <div class="copyright">
+            Desenvolvido por: <strong>@luizfx.dev</strong> - 2024 - Todos os direitos reservados 
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let nome = document.getElementById('nome').value;
+        let email = document.getElementById('email').value;
+        let assunto = document.getElementById('assunto').value;
+        let mensagem = document.getElementById('mensagem').value;
+        
+        if (!nome || !email || !assunto || !mensagem) {
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
+        
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert("Por favor, insira um endereço de e-mail válido.");
+            return;
+        }
+        
+        const whatsappMessage = `Nome: ${nome}%0AEmail: ${email}%0AAssunto: ${assunto}%0AMensagem: ${mensagem}`;
+        const whatsappLink = `https://wa.me/5581997441167?text=${whatsappMessage}`;
+        
+        alert("Mensagem será enviada pelo WhatsApp!");
+        document.getElementById('contact-form').reset();
+        window.open(whatsappLink, '_blank');
+    });
+</script>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        
+        if (navbar) {
+            const navLinks = navbar.querySelectorAll('.nav-link');
+            
+            function atualizarNavbar() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                    navLinks.forEach(link => {
+                        link.style.color = '#333';
+                    });
+                } else {
+                    navbar.classList.remove('scrolled');
+                    navLinks.forEach(link => {
+                        link.style.color = 'white';
+                    });
+                }
+            }
+            
+            // Verificação inicial
+            atualizarNavbar();
+            
+            // Atualizar ao rolar
+            window.addEventListener('scroll', atualizarNavbar);
+            
+            // Rolagem suave
+            document.querySelectorAll('a[href^="#"]').forEach(ancora => {
+                ancora.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const idAlvo = this.getAttribute('href');
+                    const elementoAlvo = document.querySelector(idAlvo);
+                    if (elementoAlvo) {
+                        elementoAlvo.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+    });
+</script>
+
+</body>
+</html></html>
