@@ -1,366 +1,386 @@
-<html><head><base href="/">
+<html>
+  <head>
+    <base href="/" />
     <!DOCTYPE html>
     <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Eduardo Oliveira Personal - Resultados</title>
-        <link rel="icon" type="image/png" href="images/favicon.png">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Copperplate&family=Josefin+Sans&display=swap" rel="stylesheet">
-        
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Personal Trainer - Resultados</title>
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Copperplate&family=Josefin+Sans&display=swap"
+          rel="stylesheet"
+        />
+
         <style>
-            body {
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                font-family: 'Josefin Sans', sans-serif;
-                padding-top: 220px;
-            }
-        
-            .navbar {
-                background-color: white;
-                padding: 10px 0;
-                position: fixed;
-                width: 100%;
-                top: 0;
-                z-index: 1000;
-            }
-        
-            .navbar-brand img {
-                height: 200px;
-                width: auto;
-            }
-        
-            .nav-link {
-    color: #333 !important;
-    font-size: 18px;
-    position: relative; 
-    text-decoration: none;
-    margin: 0 10px;
-    font-family: 'Copperplate', serif;
-    transition: color 0.3s ease;
-}
+          body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Josefin Sans', sans-serif;
+            padding-top: 220px;
+          }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #333;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
+          .navbar {
+            background-color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+          }
 
-.nav-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+          .navbar-brand img {
+            height: 200px;
+            width: auto;
+          }
 
-}
+          .nav-link {
+            color: #333 !important;
+            font-size: 18px;
+            position: relative;
+            text-decoration: none;
+            margin: 0 10px;
+            font-family: 'Copperplate', serif;
+            transition: color 0.3s ease;
+          }
 
-.social-links a:hover {
+          .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #333;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+          }
+
+          .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+
+          .social-links a:hover {
             transform: translateY(-5px);
-        }
-    
-        .social-links a:hover i.bi-linkedin {
-            color: #0077b5;
-        }
-    
-        .social-links a:hover i.bi-instagram {
-            color: #e4405f;
-        }
-    
-        .social-links a:hover i.bi-twitter-x {
-            color: #000;
-        }
-        
-            h1, h2 {
-                font-family: 'Copperplate', serif;
-                color: #333;
-            }
+          }
 
-            .page-intro p {
-                font-size: 1.2rem;
-                line-height: 1.8;
-                color: #666;
-}
-    
-            .transformation-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 30px;
-                padding: 20px;
-            }
-    
-            .transformation-card {
-                background: white;
-                border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                transition: transform 0.3s ease;
-            }
-    
-            .transformation-card:hover {
-                transform: translateY(-5px);
-            }
-    
+          .social-links a:hover i.bi-linkedin {
+            color: #0077b5;
+          }
+
+          .social-links a:hover i.bi-instagram {
+            color: #e4405f;
+          }
+
+          .social-links a:hover i.bi-twitter-x {
+            color: #000;
+          }
+
+          h1,
+          h2 {
+            font-family: 'Copperplate', serif;
+            color: #333;
+          }
+
+          .page-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #666;
+          }
+
+          .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+          }
+
+          .transformation-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+          }
+
+          .transformation-card:hover {
+            transform: translateY(-5px);
+          }
+
+          .transformation-image {
+            position: relative;
+            width: 100%;
+            padding-top: 75%;
+            overflow: hidden;
+            cursor: pointer;
+          }
+
+          .transformation-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #f8f9fa;
+          }
+
+          .transformation-info {
+            padding: 20px;
+          }
+
+          .transformation-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.9rem;
+          }
+
+          .transformation-description {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 0;
+          }
+
+          .page-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+          }
+
+          .footer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 150px;
+            padding: 20px 0;
+          }
+
+          .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+          }
+
+          .social-links a {
+            color: #808080;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 24px;
+          }
+
+          .copyright {
+            text-align: center;
+            color: #808080;
+            font-size: 14px;
+            width: 100%;
+            margin-top: 10px;
+            font-family: 'Josefin Sans', sans-serif;
+          }
+
+          /* Modal styles */
+          .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .modal-content {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+          }
+
+          .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+
+          @media (max-width: 768px) {
             .transformation-image {
-                position: relative;
-                width: 100%;
-                padding-top: 75%;
-                overflow: hidden;
-                cursor: pointer;
+              padding-top: 100%;
             }
-    
-            .transformation-image img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                background-color: #f8f9fa;
-            }
-    
-            .transformation-info {
-                padding: 20px;
-            }
-    
-            .transformation-stats {
-                display: flex;
-                gap: 20px;
-                margin-bottom: 15px;
-                color: #666;
-                font-size: 0.9rem;
-            }
-    
-            .transformation-description {
-                color: #333;
-                line-height: 1.6;
-                margin-bottom: 0;
-            }
-    
-            .page-intro {
-                text-align: center;
-                max-width: 800px;
-                margin: 0 auto 50px;
-                padding: 0 20px;
-            }
-    
-            .footer {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin-top: 150px;
-                padding: 20px 0;
-            }
-        
-            .social-links {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 30px;
-                margin-bottom: 20px;
-            }
-        
-            .social-links a {
-                color: #808080;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                font-size: 24px;
-            }
-        
-            .copyright {
-                text-align: center;
-                color: #808080;
-                font-size: 14px;
-                width: 100%;
-                margin-top: 10px;
-                font-family: 'Josefin Sans', sans-serif;
-            }
-    
-            /* Modal styles */
-            .image-modal {
-                display: none;
-                position: fixed;
-                z-index: 2000;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0,0,0,0.9);
-                padding: 20px;
-                justify-content: center;
-                align-items: center;
-            }
-    
-            .modal-content {
-                display: block;
-                margin: auto;
-                max-width: 90%;
-                max-height: 90vh;
-                object-fit: contain;
-            }
-    
-            .close-modal {
-                position: absolute;
-                top: 15px;
-                right: 35px;
-                color: #f1f1f1;
-                font-size: 40px;
-                font-weight: bold;
-                cursor: pointer;
-            }
-    
-            @media (max-width: 768px) {
-                .transformation-image {
-                    padding-top: 100%;
-                }
-            }
+          }
         </style>
-    </head>
-    <body>
+      </head>
+      <body>
         <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/logoblack.png" alt="Logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#sobre">Sobre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="calculator.html">Calculadora IMC</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="results.html">Resultados</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#contato">Contato</a>
-                        </li>
-                    </ul>
-                </div>
+          <div class="container">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/logoblack.png" alt="Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#sobre">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="calculator.html">Calculadora IMC</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="results.html">Resultados</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#contato">Contato</a>
+                </li>
+              </ul>
             </div>
+          </div>
         </nav>
-    
+
         <!-- Image Modal -->
         <div id="imageModal" class="image-modal">
-            <span class="close-modal">&times;</span>
-            <img class="modal-content" id="modalImage">
+          <span class="close-modal">&times;</span>
+          <img class="modal-content" id="modalImage" />
         </div>
-    
+
         <div class="main-content">
-            <div class="container">
-                <div class="page-intro">
-                    <h1>Resultados</h1>
-                    <p>Conheça algumas das histórias inspiradoras de alunos que transformaram suas vidas através do compromisso com a saúde e bem-estar. Cada jornada é única e representa dedicação, perseverança e mudança de hábitos.</p>
-                </div>
-                
-                <div class="transformation-grid">
-                    <div class="transformation-card">
-                        <div class="transformation-image">
-                            <img src="images/resultado1.png" alt="Antes e Depois - Maria" onclick="openModal(this)">
-                        </div>
-                        <div class="transformation-info">
-                            <h2>Maria Silva</h2>
-                            <div class="transformation-stats">
-                                <span>32 anos</span>
-                                <span>-15kg em 6 meses</span>
-                            </div>
-                            <p class="transformation-description">
-                                "Maria transformou não apenas seu corpo, mas sua vida inteira. Com foco em exercícios funcionais e reeducação alimentar, ela conquistou mais disposição, autoestima e qualidade de vida. Sua dedicação aos treinos e comprometimento com as mudanças de hábitos foram fundamentais para alcançar seus objetivos."
-                            </p>
-                        </div>
-                    </div>
-    
-                    <div class="transformation-card">
-                        <div class="transformation-image">
-                            <img src="images/resultado2.png" alt="Antes e Depois - João" onclick="openModal(this)">
-                        </div>
-                        <div class="transformation-info">
-                            <h2>João Santos</h2>
-                            <div class="transformation-stats">
-                                <span>45 anos</span>
-                                <span>-22kg em 8 meses</span>
-                            </div>
-                            <p class="transformation-description">
-                                "João buscava melhorar sua saúde após anos de sedentarismo. Com um programa personalizado focado em exercícios de força e cardio, alcançou não apenas sua meta de peso, mas também melhorou significativamente seus indicadores de saúde, incluindo pressão arterial e níveis de colesterol."
-                            </p>
-                        </div>
-                    </div>
-    
-                    <div class="transformation-card">
-                        <div class="transformation-image">
-                            <img src="images/resultado3.png" alt="Antes e Depois - Ana" onclick="openModal(this)">
-                        </div>
-                        <div class="transformation-info">
-                            <h2>Ana Paula Cavalcanti</h2>
-                            <div class="transformation-stats">
-                                <span>28 anos</span>
-                                <span>-18kg em 7 meses</span>
-                            </div>
-                            <p class="transformation-description">
-                                "Ana sempre lutou contra a balança, mas encontrou no treino personalizado a chave para sua transformação. Com foco em exercícios de alta intensidade e acompanhamento nutricional, ela não apenas perdeu peso, mas ganhou força, resistência e uma nova perspectiva sobre saúde e bem-estar."
-                            </p>
-                        </div>
-                    </div>
-                </div>
+          <div class="container">
+            <div class="page-intro">
+              <h1>Resultados</h1>
+              <p>
+                Conheça algumas das histórias inspiradoras de alunos que transformaram suas vidas através do compromisso
+                com a saúde e bem-estar. Cada jornada é única e representa dedicação, perseverança e mudança de hábitos.
+              </p>
             </div>
+
+            <div class="transformation-grid">
+              <div class="transformation-card">
+                <div class="transformation-image">
+                  <img src="images/resultado1.png" alt="Antes e Depois - Maria" onclick="openModal(this)" />
+                </div>
+                <div class="transformation-info">
+                  <h2>Maria Silva</h2>
+                  <div class="transformation-stats">
+                    <span>32 anos</span>
+                    <span>-15kg em 6 meses</span>
+                  </div>
+                  <p class="transformation-description">
+                    "Maria transformou não apenas seu corpo, mas sua vida inteira. Com foco em exercícios funcionais e
+                    reeducação alimentar, ela conquistou mais disposição, autoestima e qualidade de vida. Sua dedicação
+                    aos treinos e comprometimento com as mudanças de hábitos foram fundamentais para alcançar seus
+                    objetivos."
+                  </p>
+                </div>
+              </div>
+
+              <div class="transformation-card">
+                <div class="transformation-image">
+                  <img src="images/resultado2.png" alt="Antes e Depois - João" onclick="openModal(this)" />
+                </div>
+                <div class="transformation-info">
+                  <h2>João Santos</h2>
+                  <div class="transformation-stats">
+                    <span>45 anos</span>
+                    <span>-22kg em 8 meses</span>
+                  </div>
+                  <p class="transformation-description">
+                    "João buscava melhorar sua saúde após anos de sedentarismo. Com um programa personalizado focado em
+                    exercícios de força e cardio, alcançou não apenas sua meta de peso, mas também melhorou
+                    significativamente seus indicadores de saúde, incluindo pressão arterial e níveis de colesterol."
+                  </p>
+                </div>
+              </div>
+
+              <div class="transformation-card">
+                <div class="transformation-image">
+                  <img src="images/resultado3.png" alt="Antes e Depois - Ana" onclick="openModal(this)" />
+                </div>
+                <div class="transformation-info">
+                  <h2>Ana Paula Cavalcanti</h2>
+                  <div class="transformation-stats">
+                    <span>28 anos</span>
+                    <span>-18kg em 7 meses</span>
+                  </div>
+                  <p class="transformation-description">
+                    "Ana sempre lutou contra a balança, mas encontrou no treino personalizado a chave para sua
+                    transformação. Com foco em exercícios de alta intensidade e acompanhamento nutricional, ela não
+                    apenas perdeu peso, mas ganhou força, resistência e uma nova perspectiva sobre saúde e bem-estar."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    
+
         <footer>
-            <div class="footer">
-                <div class="social-links">
-                    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                    <a href="https://www.instagram.com/eduardoo.personal" target="_blank" title="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="https://twitter.com" target="_blank" title="Twitter X">
-                        <i class="bi bi-twitter-x"></i>
-                    </a>
-                </div>
-                <div class="copyright">
-                    Desenvolvido por: <strong>@luizfx.dev</strong> - 2024 - Todos os direitos reservados 
-                </div>
+          <div class="footer">
+            <div class="social-links">
+              <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/eduardoo.personal" target="_blank" title="Instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" title="Twitter X">
+                <i class="bi bi-twitter-x"></i>
+              </a>
             </div>
+            <div class="copyright">
+              Desenvolvido por: <strong>@luizfx.dev</strong> - 2024 - Todos os direitos reservados
+            </div>
+          </div>
         </footer>
-    
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            // Modal functionality
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const closeBtn = document.getElementsByClassName('close-modal')[0];
-    
-            function openModal(img) {
-                modal.style.display = "flex";
-                modalImg.src = img.src;
+          // Modal functionality
+          const modal = document.getElementById('imageModal');
+          const modalImg = document.getElementById('modalImage');
+          const closeBtn = document.getElementsByClassName('close-modal')[0];
+
+          function openModal(img) {
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+          }
+
+          closeBtn.onclick = function () {
+            modal.style.display = 'none';
+          };
+
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = 'none';
             }
-    
-            closeBtn.onclick = function() {
-                modal.style.display = "none";
-            }
-    
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
+          };
         </script>
-    </body>
+      </body>
     </html>
+  </head>
+</html>
