@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run copy-static",
+    "copy-static": "cpx \"public/**/*\" dist/ && echo \"Arquivos estáticos copiados para dist/\"",
     "lint": "eslint .",
     "preview": "vite preview"
   },
