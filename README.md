@@ -62,22 +62,7 @@ scss/: Caso utilize Sass/SCSS para pré-processamento de CSS.
 
 Configuração: Arquivos para Tailwind, PostCSS, Vite, ESLint e outros, responsáveis pelo build, lint e ferramentas de desenvolvimento.
 
-Como Rodar o Projeto
-Clone o repositório:
 
-bash
-git clone [URL_DO_REPO]
-cd calculadora-imc
-Instale as dependências (caso utilize npm ou yarn):
-
-bash
-npm install
-Rode o projeto em modo desenvolvimento:
-
-bash
-npm run dev
-Abra o navegador e acesse:
-http://localhost:3000 (ou a porta exibida)
 
 Contribuição
 Se quiser contribuir, abra um pull request ou envie sugestões através de issues.
