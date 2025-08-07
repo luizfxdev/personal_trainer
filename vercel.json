@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/imc", "destination": "/imc.html" }]
+}
